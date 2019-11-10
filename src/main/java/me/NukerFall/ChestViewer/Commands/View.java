@@ -30,7 +30,7 @@ public class View implements CommandExecutor {
 					if (!main.getConfig().getBoolean("gui")) {
 						for (ItemStack i : c.getInventory().getContents()) {
 							if (i!=null && !main.getConfig().getStringList("blacklisted-items").contains(i.getType().name())) {
-								if (main.getConfig().getBoolean("show-amount")==true) {
+								if (main.getConfig().getBoolean("show-amount")) {
 									sender.sendMessage(Colors.clr(main.getConfig().getString("item-type-amount")
 									.replaceAll("%item%", i.getType().name().toLowerCase()).replaceAll("%num%", String.valueOf(i.getAmount()))));
 								} else {
@@ -43,7 +43,11 @@ public class View implements CommandExecutor {
 						Inventory inv = Bukkit.createInventory(p, 54, Colors.clr(main.getConfig().getString("chest-name")));
 						for (ItemStack i : c.getInventory().getContents()) {
 							if (i!=null && !main.getConfig().getStringList("blacklisted-items").contains(i.getType().name())) {
-							inv.addItem(i);
+								if (main.getConfig().getBoolean("show-amount")) {
+									inv.addItem(i);
+								} else {
+									inv.addItem(new ItemStack(Material.valueOf(i.getType().name()), 1));
+								}
 							}
 						}
 						p.openInventory(inv);

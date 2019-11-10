@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import me.NukerFall.ChestViewer.Commands.Mode;
 import me.NukerFall.ChestViewer.Commands.View;
 import me.NukerFall.ChestViewer.Events.Click;
@@ -17,7 +16,7 @@ public class Main extends JavaPlugin {
 	public HashMap<Player, Boolean> map = new HashMap<Player, Boolean>();
 	
 	public void onEnable() {
-		send("[ChestViewer] &aPlugin Enabled!");
+		send("&aPlugin enabled!");
 		saveDefaultConfig();
 		new View(this);
 		new Click(this);
@@ -27,12 +26,12 @@ public class Main extends JavaPlugin {
 	}
 	
 	public void onDisable() {
-		send("[ChestViewer] &cPlugin Disabled!");
+		send("&cPlugin disabled!");
 		saveConfig();
 	}
 	
 	public void send(String s) {
-		Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', s));
+		Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "[ChestViewer] " + s));
 	}
 
 	public boolean isWork(Player p) {

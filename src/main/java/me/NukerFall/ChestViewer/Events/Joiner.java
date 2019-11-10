@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-
 import me.NukerFall.ChestViewer.Main;
 
 public class Joiner implements Listener {

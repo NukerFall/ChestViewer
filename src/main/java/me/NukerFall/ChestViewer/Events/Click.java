@@ -39,7 +39,7 @@ public class Click implements Listener {
 							if (!main.getConfig().getBoolean("gui")) {
 								for (ItemStack i : c.getInventory().getContents()) {
 									if (i!=null && !main.getConfig().getStringList("blacklisted-items").contains(i.getType().name())) {
-										if (main.getConfig().getBoolean("show-amount")==true) {
+										if (main.getConfig().getBoolean("show-amount")) {
 											p.sendMessage(Colors.clr(main.getConfig().getString("item-type-amount")
 											.replaceAll("%item%", i.getType().name().toLowerCase()).replaceAll("%num%", String.valueOf(i.getAmount()))));
 										} else {
@@ -52,7 +52,11 @@ public class Click implements Listener {
 								Inventory inv = Bukkit.createInventory(e.getPlayer(), 54, Colors.clr(main.getConfig().getString("chest-name")));
 								for (ItemStack i : c.getInventory().getContents()) {
 									if (i!=null && !main.getConfig().getStringList("blacklisted-items").contains(i.getType().name())) {
+										if (main.getConfig().getBoolean("show-amount")) {
 										inv.addItem(i);
+										} else {
+											inv.addItem(new ItemStack(Material.valueOf(i.getType().name()), 1));
+										}
 									}
 								}
 								p.openInventory(inv);
