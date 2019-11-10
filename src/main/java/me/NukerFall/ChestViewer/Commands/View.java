@@ -46,7 +46,7 @@ public class View implements CommandExecutor {
 								if (main.getConfig().getBoolean("show-amount")) {
 									inv.addItem(i);
 								} else {
-									inv.addItem(new ItemStack(Material.valueOf(i.getType().name()), 1));
+									inv.addItem(new ItemStack(i.getType(), 1));
 								}
 							}
 						}
