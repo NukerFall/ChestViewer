@@ -1,0 +1,11 @@
+name: ChestViewer
+version: 1
+author: [NukerFall]
+main: me.NukerFall.ChestViewer.Main
+description: Plugin for viewing chest contents
+api-version: 1.14
+commands:
+  view:
+    description: View chest contents
+  viewmode:
+    description: Toggle click mode

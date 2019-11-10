@@ -1,0 +1,18 @@
+#ChestViewer configuration
+#Messages
+no-perm: '&cYou do not have permission for this!'
+chest-warning: '&cYou have to look at the chest!'
+only-players: '&cOnly players can perform this command!'
+item-type-amount: '&aChest contains: &e%item%&a, amount: &e%num%.'
+item-type: '&aChest contains: &e%item%!'
+no-item: '&cYou do not have a special item to view chest contents!'
+mode-changed: '&aView mode changed to &e"%state%".'
+chest-name: '&2Chest contents'
+#Settings
+gui: false
+show-amount: true
+item-event: true
+item-material: STICK
+blacklisted-items:
+- STONE
+- SAND
