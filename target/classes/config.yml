@@ -10,6 +10,7 @@ mode-changed: '&aView mode changed to &e"%state%".'
 chest-name: '&2Chest contents'
 #Settings
 gui: false
+remove-item: false
 show-amount: true
 item-event: true
 item-material: STICK
