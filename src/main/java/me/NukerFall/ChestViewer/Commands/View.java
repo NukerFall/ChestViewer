@@ -40,7 +40,8 @@ public class View implements CommandExecutor {
 							}
 						}
 					} else {
-						Inventory inv = Bukkit.createInventory(p, 54, Colors.clr(main.getConfig().getString("chest-name")));
+						Integer slots = c.getInventory().getSize();
+						Inventory inv = Bukkit.createInventory(p, 54, Colors.clr(main.getConfig().getString("chest-name").replaceAll("%size%", slots.toString())));
 						for (ItemStack i : c.getInventory().getContents()) {
 							if (i!=null && !main.getConfig().getStringList("blacklisted-items").contains(i.getType().name())) {
 								if (main.getConfig().getBoolean("show-amount")) {

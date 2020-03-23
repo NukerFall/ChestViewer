@@ -7,7 +7,7 @@ item-type-amount: '&aChest contains: &e%item%&a, amount: &e%num%.'
 item-type: '&aChest contains: &e%item%!'
 no-item: '&cYou do not have a special item to view chest contents!'
 mode-changed: '&aView mode changed to &e"%state%".'
-chest-name: '&2Chest contents'
+chest-name: '&2Chest contents &e| &2Size: &e%size%'
 #Settings
 gui: false
 remove-item: false
